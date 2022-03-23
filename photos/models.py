@@ -23,6 +23,10 @@ class Location(models.Model):
     def delete_location(self):
         self.delete()
 
+    @classmethod
+    def update_location(cls,id, new_location):
+        cls.objects.filter(id = id).update(locationx = new_location)
+
     def __str__(self):
         return self.locationx
 
