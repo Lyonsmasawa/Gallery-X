@@ -25,6 +25,6 @@ class LocationTestClass(TestCase):
         self.assertTrue(len(locations) == 0)
 
     def test_update_location(self):
-        self.location.update_location("Kenya")
+        self.location.update_location(Kenya)
         locationx = Location.objects.all()
         self.assertEqual(locationx.locationx, 'Kenya')
