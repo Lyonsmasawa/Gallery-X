@@ -22,5 +22,8 @@ class Image(models.Model):
     image_category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     image_location = models.ForeignKey(Location,on_delete=models.DO_NOTHING)
 
+    def save_image(self):
+        self.save()
+
     def __str__(self) -> str:
         return self.name
