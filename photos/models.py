@@ -5,11 +5,23 @@ from django.db import models
 class Category(models.Model):
     categoryx = models.CharField(max_length=20)
 
+    def save_category(self):
+        self.save()
+
+    def delete_category(self):
+        self.delete()
+
     def __str__(self):
         return self.categoryx
 
 class Location(models.Model):
-    locationx = models.CharField(max_length=25)    
+    locationx = models.CharField(max_length=25)
+
+    def save_location(self):
+        self.save()
+
+    def delete_location(self):
+        self.delete()
 
     def __str__(self):
         return self.locationx
@@ -27,8 +39,6 @@ class Image(models.Model):
 
     def delete_image(self):
         self.delete()
-
-    
 
     def __str__(self) -> str:
         return self.name
