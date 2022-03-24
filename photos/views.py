@@ -7,11 +7,17 @@ from .models import Category, Location, Image
 def gallery(request):
 
     categories = Category.get_all_categories()
-    context = {'categories': categories}
+    images = Image.get_all_images()
+
+    context = {'categories': categories, 'images': images}
     return render(request, 'photos/gallery.html', context)
 
 def viewImage(request, pk):
-    return render(request, 'photos/image.html')
+
+    image = Image.get_images_by_id(pk)
+
+    context = {'image': image}
+    return render(request, 'photos/image.html', context)
 
 def addImage(request):
     return render(request, 'photos/add_image.html')

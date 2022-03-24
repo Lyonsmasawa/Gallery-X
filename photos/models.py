@@ -53,6 +53,13 @@ class Image(models.Model):
     def get_all_images(cls):
         images = cls.objects.all()
         return images
+    
+    @classmethod
+    def get_images_by_id(cls, id):
+        image = cls.objects.get(id = id)
+        return image
+    
+    
 
     def __str__(self) -> str:
         return self.name
