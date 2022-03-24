@@ -11,6 +11,10 @@ class Category(models.Model):
     def delete_category(self):
         self.delete()
 
+    def get_all_categories(self):
+        categories = Category.objects.all()
+        return categories
+
     def __str__(self):
         return self.categoryx
 
