@@ -1,10 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import context
 from .models import Category, Location, Image
 
 # Create your views here.
 def gallery(request):
-    return render(request, 'photos/gallery.html')
+
+    categories = Category.get_all_categories()
+    context = {'categories': categories}
+    return render(request, 'photos/gallery.html', context)
 
 def viewImage(request, pk):
     return render(request, 'photos/image.html')

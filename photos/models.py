@@ -11,8 +11,9 @@ class Category(models.Model):
     def delete_category(self):
         self.delete()
 
-    def get_all_categories(self):
-        categories = Category.objects.all()
+    @classmethod
+    def get_all_categories(cls):
+        categories = cls.objects.all()
         return categories
 
     def __str__(self):
