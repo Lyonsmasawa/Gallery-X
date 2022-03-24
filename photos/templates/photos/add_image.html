@@ -22,33 +22,46 @@
             <div class="col-md-4">
                 <a href="{% url 'gallery' %}">Back</a>
                 <div class="card">
-                    <form action="">
+                    <form method="POST" action="">
                         <div class="form-group m-lg-4">
                             <label>Name</label>
-                            <input class="form-control" name="name" type="text" placeholder="Enter image title here">
+                            <input class="form-control" name="name" type="text" placeholder="Enter image title here" required>
                         </div>
 
                         <div class="form-group m-lg-4">
                             <label>Description</label>
-                            <input class="form-control" name="description" type="text" placeholder="Enter description here">
+                            <input class="form-control" name="description" type="text"
+                                placeholder="Enter description here" required> 
                         </div>
 
                         <div class="form-group m-lg-4">
                             <label>Select Category</label>
                             <select name="category" id="cat">
                                 <option value="none">select a category</option>
+
+                                {% for category in categories %}
+                                <option value="{{category.id}}">{{category.categoryx}}</option>
+                                {% endfor %}
+
                             </select>
+                        </div>
+                        <div class="form-group m-lg-4">
+                            <label>Add a category</label>
+                            <input class="form-control" name="add_category" type="text"
+                                placeholder="Enter category name here">
                         </div>
 
                         <div class="form-group m-lg-4">
                             <label>Location</label>
-                            <input class="form-control" name="location" type="text" placeholder="Enter location here">
+                            <input class="form-control" name="location" type="text" placeholder="Enter location here" required>
                         </div>
 
                         <div class="form-group m-lg-4">
                             <label>Upload Image</label>
-                            <input class="form-control" name="image" type="file">
+                            <input class="form-control" name="image" type="file" required>
                         </div>
+
+                        <button type="submit" class="m-lg-4" [disabled]="!form.form.valid">Add Image</button>
                     </form>
                 </div>
             </div>
