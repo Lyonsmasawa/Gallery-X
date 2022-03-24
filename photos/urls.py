@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns = [
     path('', views.gallery, name = 'gallery'),
-    path('image/<int:pk>/', views.viewImage, name= 'image'),
+    path('image/<int:id>/', views.viewImage, name= 'image'),
     path('add/', views.addImage, name = 'add')
 ]
 

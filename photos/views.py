@@ -12,9 +12,9 @@ def gallery(request):
     context = {'categories': categories, 'images': images}
     return render(request, 'photos/gallery.html', context)
 
-def viewImage(request, pk):
+def viewImage(request, id):
 
-    image = Image.get_images_by_id(pk)
+    image = Image.get_images_by_id(id)
 
     context = {'image': image}
     return render(request, 'photos/image.html', context)
