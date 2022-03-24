@@ -23,5 +23,9 @@ def addImage(request):
 
     categories = Category.get_all_categories()
 
+    if request.method == 'POST':
+        data = request.POST
+        image = request.FILES.get('image')
+
     context = {'categories': categories,}
     return render(request, 'photos/add_image.html', context)
