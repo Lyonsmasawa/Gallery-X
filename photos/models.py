@@ -16,6 +16,11 @@ class Category(models.Model):
         categories = cls.objects.all()
         return categories
 
+    @classmethod
+    def get_category_by_id(cls, id):
+        category = cls.objects.get(id = id)
+        return category
+
     def __str__(self):
         return self.categoryx
 
@@ -55,9 +60,14 @@ class Image(models.Model):
         return images
     
     @classmethod
-    def get_images_by_id(cls, id):
+    def get_image_by_id(cls, id):
         image = cls.objects.get(id = id)
         return image
+
+    @classmethod
+    def get_images_by_category(cls, category):
+        images = cls.objects.filter(image_category__categoryx = category)
+        return images
     
     
 
