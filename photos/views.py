@@ -20,4 +20,8 @@ def viewImage(request, id):
     return render(request, 'photos/image.html', context)
 
 def addImage(request):
-    return render(request, 'photos/add_image.html')
+
+    categories = Category.get_all_categories()
+
+    context = {'categories': categories,}
+    return render(request, 'photos/add_image.html', context)
