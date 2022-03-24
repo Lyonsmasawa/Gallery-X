@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,13 +15,45 @@
     {% endblock styles %}
     <title>Document</title>
 </head>
+
 <body>
     <div class="container-fluid">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-md-4">
-                form
+                <a href="{% url 'gallery' %}">Back</a>
+                <div class="card">
+                    <form action="">
+                        <div class="form-group m-lg-4">
+                            <label>Name</label>
+                            <input class="form-control" name="name" type="text" placeholder="Enter image title here">
+                        </div>
+
+                        <div class="form-group m-lg-4">
+                            <label>Description</label>
+                            <input class="form-control" name="description" type="text" placeholder="Enter description here">
+                        </div>
+
+                        <div class="form-group m-lg-4">
+                            <label>Select Category</label>
+                            <select name="category" id="cat">
+                                <option value="none">select a category</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group m-lg-4">
+                            <label>Location</label>
+                            <input class="form-control" name="location" type="text" placeholder="Enter location here">
+                        </div>
+
+                        <div class="form-group m-lg-4">
+                            <label>Upload Image</label>
+                            <input class="form-control" name="image" type="file">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
