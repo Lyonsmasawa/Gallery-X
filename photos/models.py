@@ -33,7 +33,7 @@ class Location(models.Model):
 class Image(models.Model):
     image = models.ImageField(upload_to = 'articles/')
     name = models.CharField(max_length=50)
-    description = models.CharField(max_length= 100)
+    description = models.TextField()
     post_date = models.DateTimeField(auto_now_add=True)
     image_category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     image_location = models.ForeignKey(Location,on_delete=models.DO_NOTHING)
