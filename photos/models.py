@@ -39,6 +39,11 @@ class Location(models.Model):
         return locations
 
     @classmethod
+    def get_location_by_id(cls, locate):
+        location = cls.objects.get(locationx = locate)
+        return location
+
+    @classmethod
     def update_location(cls,id, new_location):
         cls.objects.filter(id = id).update(locationx = new_location)
 

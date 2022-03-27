@@ -35,29 +35,33 @@ def addImage(request):
 
     categories = Category.get_all_categories()
 
-    # if request.method == 'POST':
-    #     data = request.POST
-    #     uploaded_image = request.FILES.get('image')
+    if request.method == 'POST':
+        data = request.POST
+        uploaded_image = request.FILES.get('image')
 
-        # print('data:',data) test if data gets through
-        # print('image:',image)
+        print('data:',data) #test if data gets through
+        print('image:',uploaded_image)
 
-        # if data['category'] is not None:
-        #     category = Category.get_category_by_id(data['category'])
-        # elif data['add_category'] is not None:
-        #     category, created = Category.objects.get_or_create(categoryx = data['add_category'])
-        # else: 
-        #     category = None
+        if data['category'] is not None:
+            category = Category.get_category_by_id(data['category'])
+            
+        elif data['add_category'] is not None:
+            category, created = Category.objects.get_or_create(categoryx = data['add_category'])
+        else: 
+            category = None
+        
+        if data['location'] is not None:
+            location =  Location.get_location_by_id(data['location'])
 
-        # image = Image.objects.create(
-        #     image = uploaded_image
-        #     name = data['name']
-        #     description = data['description']
-        #     image_location = data['location']
-        #     image_category = category
-        # )
+        image = Image.objects.create(
+            image = uploaded_image,
+            name = data['name'],
+            description = data['description'],
+            image_location = location,
+            image_category = category,
+        )
 
-        # return redirect('gallery')
+        return redirect('gallery')
 
     context = {'categories': categories,}
     return render(request, 'photos/add_image.html', context)
