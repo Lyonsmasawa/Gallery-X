@@ -12,17 +12,17 @@
         {% endif %}
 
     </div>
-    <div class="row">
+    <div class="views">
 
         {% if images %}
-
         {% for image in images %}
-        <div class="col-md-3">
-            <img src="{{image.image.url}}" alt="">
-            <h4>{{image.name}}</h4>
+        <div class="">
+            <a href="{% url 'image' image.id %}">
+                <img src="{{image.image.url}}" class="img-style img-fluid mt-3" alt="...">
+            </a>
+            <h6 class="text-center h6class my-3">{{image.image_category.categoryx}}</h6>
         </div>
         {% endfor %}
-
         {% endif %}
     </div>
 </div>
