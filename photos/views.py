@@ -31,6 +31,7 @@ def viewImage(request, id):
     context = {'image': image}
     return render(request, 'photos/image.html', context)
 
+
 def addImage(request):
 
     categories = Category.get_all_categories()

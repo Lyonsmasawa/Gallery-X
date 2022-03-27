@@ -26,7 +26,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header p-1">
-                    <h5 class="modal-title" id="my-modal-title">{{image.name}}</h5>
+                    <h4 class="modal-title text-black" id="my-modal-title">{{image.name}}</h4>
                     <button class="close btn" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -45,13 +45,14 @@
                         </div>
                     </div>
                 </div>
+                <hr>
+                <div class="p-2">{{image.description}}</div>
                 <p></p>
-                <div class="card p-2 bg-black text-white">{{image.description}}</div>
-                <p></p>
-                <div class="bg-black p-2 btn text-white"><i class="fa fa-share-alt" aria-hidden="true"
-                    onclick="copyToClipboard(document.getElementById('copy').innerHTML)"></i></div>
+                <div class="bg-black p-2 btn text-white"
+                    onclick="copyToClipboard(document.getElementById('copy').innerHTML)"><i class="fa fa-share-alt"
+                        aria-hidden="true"></i></div>
             </div>
-            <div class="pz" id="copy" >{{image.image.url}}</div>
+            <div class="pz" id="copy">{{image.image.url}}</div>
         </div>
     </div>
     {% block scripts %}
