@@ -71,7 +71,7 @@ class Image(models.Model):
     
     @classmethod
     def get_image_by_id(cls, id):
-        image = cls.objects.get(id = id).order_by('-id')
+        image = cls.objects.get(id = id)
         return image
 
     @classmethod
