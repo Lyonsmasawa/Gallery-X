@@ -21,6 +21,9 @@
     grid-auto-flow: column;
     gap: 20px;
 }
+.views img:hover{
+    cursor: zoom-in;
+}
 
 body{
     color: #111;
@@ -30,14 +33,33 @@ body{
     color: black !important;
     background-color: white !important;
 }
+.nav-item{
+    color: black;
+}
 
 .set{
-    height: 1vh;
+    height: 2vh;
+    background-color: black;
+}
+.set1{
+    height: .4vh;
+    background-color: white;
+}
+.set2{
+    height: .1vh;
     background-color: black;
 }
 
+
 .c{
     color: black;
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+.b{
+    padding: 0% 2%;
+    font-weight: 900;
+    outline: 4px solid black;
 }
 
 .search{
