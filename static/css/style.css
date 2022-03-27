@@ -1,20 +1,45 @@
 * {
     box-sizing: border-box;
 }
+
 .xview a{
     text-decoration: none;
 }
 
 .h6class{
     padding: 7px 10px;
-    background-color: rgba(128, 128, 128, 0.39);
+    background-color: rgba(128, 128, 128, 0.212);
     width: fit-content;
     font-weight: 400;
     text-transform: capitalize;
-    color: rgba(0, 0, 0, 0.568);
+    color: rgb(0, 0, 0);
+    border-radius: 2px;
 }
+
 .views{
     display: grid;
     grid-auto-flow: column;
     gap: 20px;
+}
+
+body{
+    color: #111;
+}
+
+.navbar{
+    color: black !important;
+    background-color: white !important;
+}
+
+.set{
+    height: 1vh;
+    background-color: black;
+}
+
+.c{
+    color: black;
+}
+
+.search{
+    border-radius: 4px;
 }

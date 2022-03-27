@@ -11,16 +11,16 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'gallery' %}">Home</a>
                 </li>
                 {% for category in categories %}
-                <li class="nav-item">
+                <li class="nav-item c">
                     <a class="nav-link" href="{% url 'gallery' %}?category={{category.categoryx}}">{{category.categoryx}}</a>
                 </li>
                 {% endfor %}
-                <li class="nav-item">
+                <li class="nav-item c">
                     <a class="nav-link btn btn-outline-info" href="{% url 'add' %}"><i class="fa fa-plus"> add</i></a>
                 </li>
             </ul>
             <form class="d-flex" action="{% url 'search_results' %}">
-                <input class="form-control me-2" type="search" placeholder="Search by Category" name="category" aria-label="Search">
+                <input class="form-control me-2 search" type="search" placeholder="Search by Category" name="category" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>
