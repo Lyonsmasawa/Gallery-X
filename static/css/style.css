@@ -27,7 +27,7 @@
 
 body{
     color: #111;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .pg{
