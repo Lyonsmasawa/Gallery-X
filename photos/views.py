@@ -34,6 +34,7 @@ def viewImage(request, id):
 def addImage(request):
 
     categories = Category.get_all_categories()
+    locations = Location.get_all_locations()
 
     if request.method == 'POST':
         data = request.POST
@@ -49,9 +50,14 @@ def addImage(request):
             category, created = Category.objects.get_or_create(categoryx = data['add_category'])
         else: 
             category = None
-        
+
         if data['location'] is not None:
             location =  Location.get_location_by_id(data['location'])
+            
+        elif data['add_category'] is not None:
+            location, created = Location.objects.get_or_create(locationx = data['add_location'])
+        else: 
+            location = None
 
         image = Image.objects.create(
             image = uploaded_image,
@@ -63,7 +69,7 @@ def addImage(request):
 
         return redirect('gallery')
 
-    context = {'categories': categories,}
+    context = {'categories': categories, 'locations': locations,}
     return render(request, 'photos/add_image.html', context)
 
 def searchImage(request):

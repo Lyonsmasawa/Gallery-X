@@ -39,8 +39,8 @@ class Location(models.Model):
         return locations
 
     @classmethod
-    def get_location_by_id(cls, locate):
-        location = cls.objects.get(locationx = locate)
+    def get_location_by_id(cls, id):
+        location = cls.objects.get(id=id)
         return location
 
     @classmethod
@@ -66,22 +66,22 @@ class Image(models.Model):
 
     @classmethod
     def get_all_images(cls):
-        images = cls.objects.all()
+        images = cls.objects.all().order_by('-id')
         return images
     
     @classmethod
     def get_image_by_id(cls, id):
-        image = cls.objects.get(id = id)
+        image = cls.objects.get(id = id).order_by('-id')
         return image
 
     @classmethod
     def get_images_by_category(cls, category):
-        images = cls.objects.filter(image_category__categoryx = category)
+        images = cls.objects.filter(image_category__categoryx = category).order_by('-id')
         return images
 
     @classmethod
     def get_images_by_location(cls, location):
-        images = cls.objects.filter(image_location__locationx = location)
+        images = cls.objects.filter(image_location__locationx = location).order_by('-id')
         return images
     
     
