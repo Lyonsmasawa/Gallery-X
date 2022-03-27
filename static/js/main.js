@@ -7,6 +7,7 @@ $('#clickImage').on('show.bs.modal', function (event) {
 })
 
 function copyToClipboard(text) {
-    window.prompt("Copy to clipboard:  Ctrl+C,  Enter", text);
-    alert("Link copied successfully")
+    texts = window.location.origin + text
+    window.prompt("Ctrl+C to copy link,  Enter", texts);
+    alert("hope that works :)")
 }
