@@ -24,6 +24,7 @@ This is a simple Gallery Website used for displaying images.
 ```
 source virtual/bin/activate
 ```
+- Install the required packages from the requirements.txt
 
 ```
 pip install -r requirements.txt
