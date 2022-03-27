@@ -27,7 +27,7 @@
             <div class="rowOne">
                 {% for image in rowOne %}
                 <a href="{% url 'image' image.id %}">
-                    <img src="{{image.image.url}}" class="img-style img-fluid" alt="...">
+                    <img src="{{image.image.url}}" class="img-style img-fluid mt-3" alt="...">
                 </a>
                 <h6 class="text-center h6class my-3">{{image.image_category.categoryx}}</h6>
                 {% empty %}
@@ -37,7 +37,7 @@
             <div class="rowTwo">
                 {% for image in rowTwo %}
                 <a href="{% url 'image' image.id %}">
-                    <img src="{{image.image.url}}" class="img-style img-fluid" alt="...">
+                    <img src="{{image.image.url}}" class="img-style img-fluid mt-3" alt="...">
                 </a>
                 <h6 class="text-center h6class my-3">{{image.image_category.categoryx}}</h6>
                 {% empty %}
@@ -47,7 +47,7 @@
             <div class="rowThree">
                 {% for image in rowThree %}
                 <a href="{% url 'image' image.id %}">
-                    <img src="{{image.image.url}}" class="img-style img-fluid" alt="...">
+                    <img src="{{image.image.url}}" class="img-style img-fluid mt-3" alt="...">
                 </a>
                 <h6 class="text-center h6class my-3">{{image.image_category.categoryx}}</h6>
                 {% empty %}
