@@ -30,11 +30,14 @@
                 <div class="modal-body p-0">
                     <img src="{{image.image.url}}" class="img-style img-fluid" alt="...">
                 </div>
-                <div class="modal-footer">
-                    <div class="container-fluid">
-                        <h6 class="pg">#{{image.image_category.categoryx}}</h6>
+                <div class="modal-footer p-1 m-0">
+                    <div class="container-fluid p-0 m-0">
+                        <span class="pg m-0">#{{image.image_category.categoryx}}</span>
+                        <p></p>
                         <p>{{image.description}}</p>
-                        <p>{{image.image_location.locationx}}</p>
+                        <div class="">
+                            <i class="fas fa-map-marker-alt text-dark"> </i> {{image.image_location.locationx}}
+                        </div>
                     </div>
                 </div>
             </div>
