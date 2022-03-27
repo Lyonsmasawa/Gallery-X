@@ -6,7 +6,8 @@ from . import views
 urlpatterns = [
     path('', views.gallery, name = 'gallery'),
     path('image/<int:id>/', views.viewImage, name= 'image'),
-    path('add/', views.addImage, name = 'add')
+    path('add/', views.addImage, name = 'add'),
+    path('search/', views.searchImage, name='search_results')
 ]
 
 urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -7,12 +7,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
+    <title>GalleryX</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
         integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+
     {% block styles %}
     {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -23,21 +23,21 @@
 <body>
     {% include 'photos/navbar.html' %}
     <div class="container-fluid">
-        <div class="row">
-
-            {% for image in images %}
-            <div class="col-md-3 my-2">
-                <div class="card">
-                    <img src="{{image.image.url}}"
-                        class="img-style img-fluid" alt="...">
-                    <h5>Category: {{image.image_category.categoryx}}</h5>
-                    <a href="{% url 'image' image.id %}">view</a>
+        <div class="viewy">
+            <div class="ro">
+                {% for image in images %}
+                <div class="my-2 xview">
+                    <div class="cont">
+                        <a href="{% url 'image' image.id %}">
+                            <img src="{{image.image.url}}" class="img-style img-fluid" alt="...">
+                            <h6 class="text-center h6class my-2">{{image.image_category.categoryx}}</h6>
+                        </a>
+                    </div>
                 </div>
+                {% empty %}
+                <h4>No Images Yet</h4>
+                {% endfor %}
             </div>
-            {% empty %}
-            <h4>No Images Yet</h4>
-            {% endfor %}
-
         </div>
 </body>
 

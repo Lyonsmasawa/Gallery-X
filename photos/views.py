@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+import numpy as np
 from django.http import HttpResponse
 from django.template import context
 from .models import Category, Location, Image
@@ -11,9 +12,15 @@ def gallery(request):
     else:
         images = Image.get_images_by_category(category)
     
-    categories = Category.get_all_categories()    
+    categories = Category.get_all_categories() 
+    imageArr = np.array(images)
+    splitImageArr = np.array_split(imageArr, 3)
 
-    context = {'categories': categories, 'images': images}
+    rowOne = splitImageArr[0]
+    rowTwo = splitImageArr[1]
+    rowThree = splitImageArr[2]
+
+    context = {'categories': categories, 'images': images, 'rowOne': rowOne, 'rowTwo': rowTwo, 'rowThree': rowThree}
     return render(request, 'photos/gallery.html', context)
 
 def viewImage(request, id):
@@ -53,3 +60,17 @@ def addImage(request):
 
     context = {'categories': categories,}
     return render(request, 'photos/add_image.html', context)
+
+def searchImage(request):
+
+    category = request.GET.get('category')
+
+    if category is None:
+        message = "You haven't searched for any category"
+        return render(request, 'photos/search.html', {"message":message})
+    else:
+        images = Image.get_images_by_category(category)
+        message = f'{category}'
+
+    context = {'images': images, 'message': message, }
+    return render(request, 'photos/search.html', context)

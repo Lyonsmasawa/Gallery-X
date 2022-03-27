@@ -1,3 +1,22 @@
-.img-thumbnail{
-    height: max-content;
+* {
+    box-sizing: border-box;
+}
+.xview a{
+    text-decoration: none;
+}
+
+.h6class{
+    padding: 7px 10px;
+    background-color: rgba(128, 128, 128, 0.39);
+    width: fit-content;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.568);
+}
+.viewy{
+    display: grid;
+    grid-auto-flow: column;
+}
+.xview img{
+
 }
