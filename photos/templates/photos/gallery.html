@@ -29,9 +29,9 @@
         <div class="views">
             <div class="rowOne">
                 {% for image in rowOne %}
-                <div data-bs-toggle="modal" data-bs-target="#clickImage">
+                <a data-bs-toggle="modal" data-bs-target="#clickImage">
                     <img src="{{image.image.url}}" class="img-style img-fluid mt-3 modal-click" alt="...">
-                </div>
+                </a>
                 <h6 class="text-center h6class my-3">{{image.image_category.categoryx}}</h6>
                 {% empty %}
                 <h4>No Images Yet</h4>
@@ -61,7 +61,7 @@
     </div>
 
     <!-- modal -->
-    <div id="clickImage{{image.id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title"
+    <div id="clickImage" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -95,6 +95,7 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {% bootstrap_javascript %}
+    <script src="{% static 'js/main.js' %}"></script>
     {% endblock scripts %}
 </body>
 

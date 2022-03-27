@@ -45,7 +45,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="card p-2 m-0 bg-black text-white">{{image.description}}</div>
+                <p></p>
+                <div class="card p-2 bg-black text-white">{{image.description}}</div>
+                <p></p>
+                <div class="bg-black p-2 btn text-white"><i class="fa fa-share-alt" aria-hidden="true"
+                        onclick="share()"></i></div>
             </div>
         </div>
     </div>
@@ -54,6 +58,7 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {% bootstrap_javascript %}
+    <script src="{% static 'js/main.js' %}"></script>
     {% endblock scripts %}
 </body>
 
