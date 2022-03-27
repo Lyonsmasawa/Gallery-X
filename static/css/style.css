@@ -13,10 +13,8 @@
     text-transform: capitalize;
     color: rgba(0, 0, 0, 0.568);
 }
-.viewy{
+.views{
     display: grid;
     grid-auto-flow: column;
-}
-.xview img{
-
+    gap: 20px;
 }
