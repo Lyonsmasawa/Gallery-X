@@ -24,6 +24,11 @@
 .views img:hover{
     cursor: zoom-in;
 }
+.pz{
+    display: none;
+    visibility: hidden;
+    z-index: 0;
+}
 
 body{
     color: #111;
