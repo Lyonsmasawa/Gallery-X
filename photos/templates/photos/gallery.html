@@ -23,22 +23,39 @@
 <body>
     {% include 'photos/navbar.html' %}
     <div class="container-fluid">
-        <div class="viewy">
-            <div class="ro">
-                {% for image in images %}
-                <div class="my-2 xview">
-                    <div class="cont">
-                        <a href="{% url 'image' image.id %}">
-                            <img src="{{image.image.url}}" class="img-style img-fluid" alt="...">
-                            <h6 class="text-center h6class my-2">{{image.image_category.categoryx}}</h6>
-                        </a>
-                    </div>
-                </div>
+        <div class="views">
+            <div class="rowOne">
+                {% for image in rowOne %}
+                <a href="{% url 'image' image.id %}">
+                    <img src="{{image.image.url}}" class="img-style img-fluid" alt="...">
+                    <h6 class="text-center h6class my-2">{{image.image_category.categoryx}}</h6>
+                </a>
+                {% empty %}
+                <h4>No Images Yet</h4>
+                {% endfor %}
+            </div>
+            <div class="rowTwo">
+                {% for image in rowTwo %}
+                <a href="{% url 'image' image.id %}">
+                    <img src="{{image.image.url}}" class="img-style img-fluid" alt="...">
+                    <h6 class="text-center h6class my-2">{{image.image_category.categoryx}}</h6>
+                </a>
+                {% empty %}
+                <h4>No Images Yet</h4>
+                {% endfor %}
+            </div>
+            <div class="rowThree">
+                {% for image in rowThree %}
+                <a href="{% url 'image' image.id %}">
+                    <img src="{{image.image.url}}" class="img-style img-fluid" alt="...">
+                    <h6 class="text-center h6class my-2">{{image.image_category.categoryx}}</h6>
+                </a>
                 {% empty %}
                 <h4>No Images Yet</h4>
                 {% endfor %}
             </div>
         </div>
+    </div>
 </body>
 
 </html>

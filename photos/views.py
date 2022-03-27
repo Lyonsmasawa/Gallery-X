@@ -20,7 +20,7 @@ def gallery(request):
     rowTwo = splitImageArr[1]
     rowThree = splitImageArr[2]
 
-    context = {'categories': categories, 'images': images, 'rowOne': rowOne, 'rowTwo': rowTwo, 'rowThree': rowThree}
+    context = {'categories': categories, 'images': images, 'rowOne': rowOne, 'rowTwo': rowTwo, 'rowThree': rowThree,}
     return render(request, 'photos/gallery.html', context)
 
 def viewImage(request, id):
