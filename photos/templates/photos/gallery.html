@@ -29,9 +29,9 @@
         <div class="views">
             <div class="rowOne">
                 {% for image in rowOne %}
-                <a href="{% url 'image' image.id %}">
-                    <img src="{{image.image.url}}" class="img-style img-fluid mt-3" alt="...">
-                </a>
+                <div data-bs-toggle="modal" data-bs-target="#clickImage">
+                    <img src="{{image.image.url}}" class="img-style img-fluid mt-3 modal-click" alt="...">
+                </div>
                 <h6 class="text-center h6class my-3">{{image.image_category.categoryx}}</h6>
                 {% empty %}
                 <h4>No Images Yet</h4>
@@ -39,7 +39,7 @@
             </div>
             <div class="rowTwo">
                 {% for image in rowTwo %}
-                <a href="{% url 'image' image.id %}">
+                <a href="" data-bs-toggle="modal" data-bs-target="#clickImage">
                     <img src="{{image.image.url}}" class="img-style img-fluid mt-3" alt="...">
                 </a>
                 <h6 class="text-center h6class my-3">{{image.image_category.categoryx}}</h6>
@@ -49,7 +49,7 @@
             </div>
             <div class="rowThree">
                 {% for image in rowThree %}
-                <a href="{% url 'image' image.id %}">
+                <a href="{% url 'image' image.id%}">
                     <img src="{{image.image.url}}" class="img-style img-fluid mt-3" alt="...">
                 </a>
                 <h6 class="text-center h6class my-3">{{image.image_category.categoryx}}</h6>
@@ -59,6 +59,42 @@
             </div>
         </div>
     </div>
+
+    <!-- modal -->
+    <div id="clickImage{{image.id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header p-1">
+                    <h5 class="modal-title" id="my-modal-title">{{image.name}}</h5>
+                    <button class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0">
+                    <img src="{{image.image.url}}" class="img-style img-fluid" alt="...">
+                </div>
+                <div class="modal-footer p-0 m-0">
+                    <div class="container-fluid p-0 m-0">
+                        <div class="navbar container">
+                            <span class="pg m-0">#{{image.image_category.categoryx}}</span>
+                            <span class="pg m-0">
+                                <i class="fas fa-map-marker-alt"> </i> {{image.image_location.locationx}}
+                            </span>
+                            <span class="pg m-0">{{image.post_date}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-2 m-0 bg-black text-white">{{image.description}}</div>
+            </div>
+        </div>
+    </div>
+    {% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {% bootstrap_javascript %}
+    {% endblock scripts %}
 </body>
 
 </html>

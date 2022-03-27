@@ -11,9 +11,9 @@
                 <li class="nav-item">
                     <a class="nav-link active c" aria-current="page" href="{% url 'gallery' %}">Home</a>
                 </li>
-                {% for category in categories %}
+                {% for location in locations %}
                 <li class="nav-item c">
-                    <a class="nav-link c active" href="{% url 'gallery' %}?category={{category.categoryx}}">{{category.categoryx}}</a>
+                    <a class="nav-link c active" href="{% url 'gallery' %}?location={{location.locationx}}">{{location.locationx}}</a>
                 </li>
                 {% endfor %}
                 <li class="nav-item c">

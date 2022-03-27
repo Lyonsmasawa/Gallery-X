@@ -34,6 +34,11 @@ class Location(models.Model):
         self.delete()
 
     @classmethod
+    def get_all_locations(cls):
+        locations = cls.objects.all()
+        return locations
+
+    @classmethod
     def update_location(cls,id, new_location):
         cls.objects.filter(id = id).update(locationx = new_location)
 

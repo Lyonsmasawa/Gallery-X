@@ -6,13 +6,14 @@ from .models import Category, Location, Image
 
 # Create your views here.
 def gallery(request):
-    category = request.GET.get('category')
-    if category is None:
+    location = request.GET.get('location')
+    if location is None:
         images = Image.get_all_images()   
     else:
-        images = Image.get_images_by_category(category)
+        images = Image.get_images_by_location(location)
     
     categories = Category.get_all_categories() 
+    locations = Location.get_all_locations()
     imageArr = np.array(images)
     splitImageArr = np.array_split(imageArr, 3)
 
@@ -20,7 +21,7 @@ def gallery(request):
     rowTwo = splitImageArr[1]
     rowThree = splitImageArr[2]
 
-    context = {'categories': categories, 'images': images, 'rowOne': rowOne, 'rowTwo': rowTwo, 'rowThree': rowThree,}
+    context = {'categories': categories, 'locations': locations, 'images': images, 'rowOne': rowOne, 'rowTwo': rowTwo, 'rowThree': rowThree,}
     return render(request, 'photos/gallery.html', context)
 
 def viewImage(request, id):
@@ -71,6 +72,19 @@ def searchImage(request):
     else:
         images = Image.get_images_by_category(category)
         message = f'{category}'
+
+    context = {'images': images, 'message': message, }
+    return render(request, 'photos/search.html', context)
+
+def searchImageByLocation(request, id):
+    
+    location = request.GET.get(id = id)
+
+    if location is None:
+        return redirect('gallery')
+    else:
+        images = Image.get_images_by_location(location)
+        message = f'{location}'
 
     context = {'images': images, 'message': message, }
     return render(request, 'photos/search.html', context)
