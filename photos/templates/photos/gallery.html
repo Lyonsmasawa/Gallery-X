@@ -27,14 +27,10 @@
         <div class="views">
             <div class="rowOne">
                 {% for image in rowOne %}
-                <a class="image-link" data-bs-toggle="modal" data-bs-target="#clickImage"
-                    data-name="{{image.name}}"
-                    data-img="{{ image.image.url}}" 
-                    data-description="{{image.description}}"
+                <a class="image-link" data-bs-toggle="modal" data-bs-target="#clickImage" data-name="{{image.name}}"
+                    data-img="{{ image.image.url}}" data-description="{{image.description}}"
                     data-location="{{image.image_location.locationx}}"
-                    data-category="{{image.image_category.categoryx}}"
-                    data-date="{{image.post_date}}"
-                >
+                    data-category="{{image.image_category.categoryx}}" data-date="{{image.post_date}}">
                     <img src="{{image.image.url}}" class="img-style img-fluid mt-3 modal-click" alt="...">
                 </a>
                 <h6 class="text-center h6class my-3">{{image.image_category.categoryx}}</h6>
@@ -44,8 +40,11 @@
             </div>
             <div class="rowTwo">
                 {% for image in rowTwo %}
-                <a href="" data-bs-toggle="modal" data-bs-target="#clickImage">
-                    <img src="{{image.image.url}}" class="img-style img-fluid mt-3" alt="...">
+                <a class="image-link" data-bs-toggle="modal" data-bs-target="#clickImage" data-name="{{image.name}}"
+                    data-img="{{ image.image.url}}" data-description="{{image.description}}"
+                    data-location="{{image.image_location.locationx}}"
+                    data-category="{{image.image_category.categoryx}}" data-date="{{image.post_date}}">
+                    <img src="{{image.image.url}}" class="img-style img-fluid mt-3 modal-click" alt="...">
                 </a>
                 <h6 class="text-center h6class my-3">{{image.image_category.categoryx}}</h6>
                 {% empty %}
@@ -54,8 +53,11 @@
             </div>
             <div class="rowThree">
                 {% for image in rowThree %}
-                <a href="{% url 'image' image.id%}">
-                    <img src="{{image.image.url}}" class="img-style img-fluid mt-3" alt="...">
+                <a class="image-link" data-bs-toggle="modal" data-bs-target="#clickImage" data-name="{{image.name}}"
+                    data-img="{{ image.image.url}}" data-description="{{image.description}}"
+                    data-location="{{image.image_location.locationx}}"
+                    data-category="{{image.image_category.categoryx}}" data-date="{{image.post_date}}">
+                    <img src="{{image.image.url}}" class="img-style img-fluid mt-3 modal-click" alt="...">
                 </a>
                 <h6 class="text-center h6class my-3">{{image.image_category.categoryx}}</h6>
                 {% empty %}
@@ -66,7 +68,7 @@
     </div>
 
     <!-- modal -->
-    <div id="clickImage" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title"
+    <div id="clickImage" class="modal fade fa-align-center" tabindex="-1" role="dialog" aria-labelledby="my-modal-title"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -77,16 +79,16 @@
                     </button>
                 </div>
                 <div class="modal-body p-0">
-                    <img id="image-url" src="">
+                    <img id="image-url" src="" />
                 </div>
                 <div class="modal-footer p-0 m-0">
                     <div class="container-fluid p-0 m-0">
                         <div class="navbar container">
-                            <span class="pg m-0"># <span id="image-category">  </span></span>
+                            <span class="pg m-0"># <span id="image-category"> </span></span>
                             <span class="pg m-0">
-                                <i class="fas fa-map-marker-alt"> </i> <span id="image-location"> </span> 
+                                <i class="fas fa-map-marker-alt"> </i> <span id="image-location"> </span>
                             </span>
-                            <span class="pg m-0"> <i class="fas fa-clock"></i> <span id="image-date"></span>  </span>
+                            <span class="pg m-0"> <i class="fas fa-clock"></i> <span id="image-date"></span> </span>
                         </div>
                     </div>
                 </div>
@@ -97,7 +99,7 @@
                     onclick="copyToClipboard(document.getElementById('copy').innerHTML)"><i class="fa fa-share-alt"
                         aria-hidden="true"></i></div>
             </div>
-            <div class="pz" id="copy">{{image.image.url}}</div>
+            <div class="pz" id="copy"></div>
         </div>
     </div>
     {% include 'photos/footer.html' %}
@@ -105,22 +107,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script>
-        $('.image-link').click(function () {
-            $('#image-name').html($(this).data('name'));
-            $('#image-description').html($(this).data('description'));
-            $('#image-description').html($(this).data('description'));
-            $('#image-category').html($(this).data('category'));
-            $('#image-location').html($(this).data('location'));
-            $('#image-date').html($(this).data('date'));
-            $('#image-url').attr('src',);
-
-            // $('#image-url').src($(this).data('img'));
-
-        });
-    </script>
-
     <script src="{% static 'js/main.js' %}"></script>
     {% endblock scripts %}
     {% bootstrap_javascript %}
