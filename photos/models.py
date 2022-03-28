@@ -52,8 +52,8 @@ class Location(models.Model):
         return self.locationx
 
 class Image(models.Model):
-    # image = models.ImageField(upload_to = 'articles/')
-    image = CloudinaryField('image')
+    image = models.ImageField(upload_to = 'articles/')
+    # image = CloudinaryField('image')
     name = models.CharField(max_length=40)
     description = models.TextField()
     post_date = models.DateTimeField(auto_now_add=True)
