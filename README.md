@@ -12,6 +12,9 @@ This is a simple Gallery Website used for displaying images.
 ### Serch results
 <img src="peek3.png">
 
+### Mobile view
+<img src="mobile.png">
+
 ### Add Image
 <img src="peek1.png">
 
