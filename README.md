@@ -13,7 +13,7 @@ This is a simple Gallery Website used for displaying images.
 <img src="peek3.png">
 
 ### Mobile view
-<img src="mobile.png"> 
+<img src="mobilex.png"> 
 
 ### Add Image
 <img src="peek1.png">
