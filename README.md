@@ -6,6 +6,9 @@ This is a simple Gallery Website used for displaying images.
 ### Home page
 <img src="peek.png">
 
+## View Image
+<img src="peek2.png">
+
 ### Add Image
 <img src="peek1.png">
 
