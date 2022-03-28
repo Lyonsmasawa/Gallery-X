@@ -4,6 +4,7 @@ function copyToClipboard(text) {
     alert("hope that works :)")
 }
 
+
 $('.image-link').click(function () {
     $('#image-name').html($(this).data('name'));
     $('#image-description').html($(this).data('description'));
@@ -12,6 +13,8 @@ $('.image-link').click(function () {
     $('#image-location').html($(this).data('location'));
     $('#image-date').html($(this).data('date'));
     $('#copy').html($(this).data('img'));
-    let pic = $('#copy').html($(this).data('img'));
-    $('#image-url').attr('src', pic);
+    
+    let pic = document.getElementById('copy').innerHTML
+    let link = window.location.origin + pic;
+    $('#image-url').attr('src', link);
 });
