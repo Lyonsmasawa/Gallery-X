@@ -44,18 +44,18 @@ def addImage(request):
         print('data:',data) #test if data gets through
         print('image:',uploaded_image)
 
-        if data['category'] is not None:
+        if data['category'] != 'none':
             category = Category.get_category_by_id(data['category'])
             
-        elif data['add_category'] is not None:
+        elif data['add_category'] != 'none':
             category, created = Category.objects.get_or_create(categoryx = data['add_category'])
         else: 
             category = None
 
-        if data['location'] is not None:
+        if data['location'] != 'none':
             location =  Location.get_location_by_id(data['location'])
             
-        elif data['add_category'] is not None:
+        elif data['add_location'] != 'none':
             location, created = Location.objects.get_or_create(locationx = data['add_location'])
         else: 
             location = None
