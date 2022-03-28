@@ -3,6 +3,12 @@
 ## Description
 This is a simple Gallery Website used for displaying images.
 
+### Home page
+<img src="peek.png">
+
+### Add Image
+<img src="peek1.png">
+
 ## Setup Requirements
 
 - Django 
