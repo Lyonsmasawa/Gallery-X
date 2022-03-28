@@ -12,4 +12,6 @@ $('.image-link').click(function () {
     $('#image-location').html($(this).data('location'));
     $('#image-date').html($(this).data('date'));
     $('#copy').html($(this).data('img'));
+    let pic = $('#copy').html($(this).data('img'));
+    $('#image-url').attr('src', pic);
 });
