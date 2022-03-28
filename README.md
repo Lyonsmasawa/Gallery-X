@@ -7,10 +7,10 @@ This is a simple Gallery Website used for displaying images.
 <img src="peek.png">
 
 ## View Image
-<img src="peek2.png">
+<img src="peek1.png">
 
 ### Add Image
-<img src="peek1.png">
+<img src="peek2.png">
 
 ## Setup Requirements
 
