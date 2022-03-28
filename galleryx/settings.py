@@ -163,14 +163,8 @@ django_heroku.settings(locals())
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# cloudinary.config(
-#     cloud_name=config('CLOUD_NAME'),
-#     api_key=config('API_KEY'),
-#     api_secret=config('API_SECRET'),
-# )
 cloudinary.config(
-  cloud_name = "xlyons",
-  api_key = "973842995749816",
-  api_secret = "8fGzGFyJfrTxSSG2n4sh6hSYxnw",
-  secret = true
+    cloud_name=config('CLOUD_NAME'),
+    api_key=config('API_KEY'),
+    api_secret=config('API_SECRET'),
 )
