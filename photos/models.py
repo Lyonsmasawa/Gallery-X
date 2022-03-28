@@ -54,7 +54,7 @@ class Location(models.Model):
 class Image(models.Model):
     # image = models.ImageField(upload_to = 'articles/')
     image = CloudinaryField('image')
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=40)
     description = models.TextField()
     post_date = models.DateTimeField(auto_now_add=True)
     image_category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
