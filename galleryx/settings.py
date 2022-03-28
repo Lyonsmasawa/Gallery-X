@@ -32,12 +32,11 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG', True)
 
 
-cloudinary.config(
-    cloud_name=config('CLOUDINARY_CLOUD_NAME'),
-    api_key=config('CLOUDINARY_API_KEY'),
-    api_secret=config('CLOUDINARY_API_SECRET'),
-    secure=True
-)
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME' : config('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY' : config('CLOUDINARY_API_KEY'),
+    'API_SECRET' : config('CLOUDINARY_API_SECRET'),
+}
 
 # development
 if config('MODE')=="dev":
@@ -63,6 +62,8 @@ else:
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
+CLOUDINARY_URL=config('CLOUDINARY_URL')
+
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
@@ -77,6 +78,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'photos.apps.PhotosConfig',
     'bootstrap5',
+    'cloudinary_storage',
     'cloudinary',
 ]
 
@@ -157,6 +159,8 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # configuring the location for media
 MEDIA_URL = '/media/'

@@ -1,5 +1,5 @@
 function copyToClipboard(text) {
-    texts = window.location.origin + text
+    texts = text
     window.prompt("Ctrl+C to copy link,  Enter", texts);
     alert("hope that works :)")
 }
@@ -13,8 +13,7 @@ $('.image-link').click(function () {
     $('#image-location').html($(this).data('location'));
     $('#image-date').html($(this).data('date'));
     $('#copy').html($(this).data('img'));
-    
+
     let pic = document.getElementById('copy').innerHTML
-    let link = window.location.origin + pic;
-    $('#image-url').attr('src', link);
+    $('#image-url').attr('src', pic);
 });
