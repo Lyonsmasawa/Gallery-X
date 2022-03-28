@@ -51,7 +51,7 @@ The following languages have been used on this project:
 
 ## Setup/Installation Requirements
 
-- Click to view <a target="_blank" href="">GalleryX</a>
+- Click to view <a target="_blank" href="https://galleryxl.herokuapp.com/">GalleryX</a>
     
 ## Known Bugs
 
